@@ -1,2 +1,10 @@
 # docker-texlive-full
-Ubuntu-based Docker image for texlive-full with support for cross-architecture and latest texlive version.
+Docker image for texlive-full with support for cross-architecture and latest texlive version.
+
+## Features
+- Cross architecture support (both x86_64 and aarch64), works on Apple Silicons machines.
+- Automatically uses latest texlive version with PATH proper;y configured.
+- (Optional) Image for VS Code Dev Containers with some additional utilities built-in.
+
+## License
+MIT License
