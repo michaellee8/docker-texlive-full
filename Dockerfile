@@ -5,7 +5,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 RUN mkdir -p /src/texlive-full \
     && cd /src/texlive-full \
-    && wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+    && wget https://ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
     && zcat < install-tl-unx.tar.gz | tar xf - \
     && cd install-tl-* \
     && perl ./install-tl --no-interaction \
