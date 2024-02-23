@@ -20,4 +20,4 @@ ENV PATH=$PATH:/usr/local/texlive/currentversion-currentarch-linux-bin
 ENV MANPATH=$MANPATH:/usr/local/texlive/currentversion-dist/doc/man
 ENV INFOPATH=$INFOPATH:/usr/local/texlive/currentversion-dist/doc/info
 
-RUN latex --version
+# RUN latex --version
