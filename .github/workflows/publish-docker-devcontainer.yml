@@ -33,7 +33,7 @@ jobs:
         with:
           images: |
             ${{ env.GITHUB_REGISTRY_IMAGE }}
-          flavour: |
+          flavor: |
             prefix=devcontainer-
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
@@ -103,7 +103,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.GITHUB_REGISTRY_IMAGE }}
-          flavour: |
+          flavor: |
             prefix=devcontainer-
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
@@ -135,5 +135,5 @@ jobs:
       - name: Copy image to DockerHub
         run: |
           docker buildx imagetools create \
-            --tag ${{ env.GITHUB_REGISTRY_IMAGE }}:devcontainer-latest \
-            ${{ env.REGISTRY_IMAGE }}:devcontainer-latest
+            --tag ${{ env.REGISTRY_IMAGE }}:devcontainer-latest \
+            ${{ env.GITHUB_REGISTRY_IMAGE }}:devcontainer-latest

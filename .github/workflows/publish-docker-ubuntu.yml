@@ -131,5 +131,5 @@ jobs:
       - name: Copy image to DockerHub
         run: |
           docker buildx imagetools create \
-            --tag ${{ env.GITHUB_REGISTRY_IMAGE }}:latest \
-            ${{ env.REGISTRY_IMAGE }}:latest
+            --tag ${{ env.REGISTRY_IMAGE }}:latest \
+            ${{ env.GITHUB_REGISTRY_IMAGE }}:latest
