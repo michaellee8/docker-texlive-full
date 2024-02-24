@@ -8,11 +8,11 @@ RUN mkdir -p /src/texlive-full \
     && wget https://ctan.org/tex-archive/systems/texlive/tlnet/install-tl-unx.tar.gz \
     && zcat < install-tl-unx.tar.gz | tar xf - \
     && cd install-tl-* \
-    && perl ./install-tl --no-interaction
+    && perl ./install-tl --no-interaction --scheme=small
 
 RUN distprefix=$(echo /usr/local/texlive/*/texmf-dist) \
     && binprefix=$(echo /usr/local/texlive/*/bin) \
-    && binpath="${binprefix}/"$(uname -p)"-linux" \
+    && binpath="${binprefix}/"$(uname -m)"-linux" \
     && ln -s "${binpath}" "${binprefix}/currentarch-linux" \
     && ln -s "${binprefix}/currentarch-linux" "/usr/local/texlive/currentversion-currentarch-linux-bin" \
     && ln -s "${distprefix}" "/usr/local/texlive/currentversion-dist"
