@@ -19,6 +19,17 @@ jobs:
           - linux/amd64
           - linux/arm64
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: false
+          swap-storage: false
+
       - name: Prepare
         run: |
           platform=${{ matrix.platform }}
