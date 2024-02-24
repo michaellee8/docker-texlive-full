@@ -66,8 +66,8 @@ jobs:
           file: Dockerfile.devcontainer
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ env.GITHUB_REGISTRY_IMAGE }}:devcontainer-latest
-          cache-to: type=inline
+          cache-from: type=registry,ref=${{ env.GITHUB_REGISTRY_IMAGE }}:devcontainer-buildcache
+          cache-to: type=registry,ref=${{ env.GITHUB_REGISTRY_IMAGE }}:devcontainer-buildcache,mode=max
           outputs: |
             type=image,name=${{ env.GITHUB_REGISTRY_IMAGE }},push-by-digest=true,name-canonical=true,push=true
 
