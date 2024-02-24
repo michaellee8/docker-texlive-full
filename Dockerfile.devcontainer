@@ -27,6 +27,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install autoconf build-essential automake pkg-config libtool gcc m4 automake autoconf-archive \
     libbrotli1 libfreetype6 libgs9 libwoff1 zlib1g libkpathsea-dev libkpathsea6
 
+RUN pip install lxml
+
 RUN git clone --depth 1 https://github.com/mgieseki/dvisvgm.git -b 3.2 /src/dvisvgm
 
 RUN mkdir -p /src/dvisvgm \
